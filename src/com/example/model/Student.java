@@ -1,6 +1,7 @@
 package com.example.model;
 
-import java.util.Date;
+
+import java.sql.Date;
 
 /**
  * Created by Banty on 18/04/17.
@@ -11,7 +12,7 @@ public class Student {
     private String name;
     private int age;
     private String mobile;
-    private Date dob;
+    private java.sql.Date dob;
     private String stream;
 
     public Student(int id, String name, int age, String mobile, Date dob, String stream) {
@@ -21,6 +22,9 @@ public class Student {
         this.mobile = mobile;
         this.dob = dob;
         this.stream = stream;
+    }
+
+    public Student() {
     }
 
     public int getId() {
@@ -45,5 +49,29 @@ public class Student {
 
     public String getStream() {
         return stream;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public void setDob(Date dob) {
+        this.dob = dob;
+    }
+
+    public void setStream(String stream) {
+        this.stream = stream;
     }
 }

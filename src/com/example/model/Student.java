@@ -12,7 +12,7 @@ public class Student {
     private String name;
     private int age;
     private String mobile;
-    private java.sql.Date dob;
+    private Date dob;
     private String stream;
 
     public Student(int id, String name, int age, String mobile, Date dob, String stream) {

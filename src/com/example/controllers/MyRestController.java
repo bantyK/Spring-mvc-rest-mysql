@@ -47,9 +47,8 @@ public class MyRestController {
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public ModelAndView saveStudent(@ModelAttribute("student") Student student){
-        ModelAndView modelAndView = new ModelAndView("index");
-        return modelAndView;
+    public void saveStudent(@ModelAttribute("student") Student student){
+        getDaoObject().addStudent(student);
     }
 
 }

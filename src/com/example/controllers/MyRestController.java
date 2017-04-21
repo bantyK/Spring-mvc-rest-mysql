@@ -52,6 +52,20 @@ public class MyRestController {
         return new ModelAndView("redirect:/students");
     }
 
+    @RequestMapping(value = "/update/student/{id}", method = RequestMethod.GET)
+    public ModelAndView showAddStudentForm(@PathVariable("id") String id) {
+        Student student = getDaoObject().retrieveStudent(Integer.parseInt(id));
+        if(student != null) {
+            ModelAndView modelAndView = new ModelAndView("updateStudentForm");
+            modelAndView.addObject("student", student);
+            return modelAndView;
+        }
+        return new ModelAndView("redirect:/students");
+    }
 
-
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public ModelAndView update(@ModelAttribute Student student){
+        getDaoObject().updateStudent(student.getId(),student);
+        return new ModelAndView("redirect:/students");
+    }
 }

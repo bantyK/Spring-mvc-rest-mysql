@@ -51,14 +51,14 @@ public class StudentDAO {
             if (!resultSet.first()) {
                 return null;
             }
-            Student student = new Student(
-                    id,
-                    resultSet.getString("name"),
-                    resultSet.getInt("age"),
-                    resultSet.getString("mobile"),
-                    resultSet.getDate("dob"),
-                    resultSet.getString("stream")
-            );
+            Student student = new Student();
+            student.setId(id);
+            student.setName(resultSet.getString("name"));
+            student.setAge(resultSet.getInt("age"));
+            student.setMobile(resultSet.getString("mobile"));
+            student.setDob(resultSet.getDate("dob"));
+            student.setStream(resultSet.getString("stream"));
+
             return student;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -73,14 +73,13 @@ public class StudentDAO {
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
-                Student student = new Student(
-                        resultSet.getInt(1),
-                        resultSet.getString(2),
-                        resultSet.getInt(3),
-                        resultSet.getString(4),
-                        resultSet.getDate(5),
-                        resultSet.getString(6)
-                );
+                Student student = new Student();
+                student.setId(resultSet.getInt(1));
+                student.setName(resultSet.getString(2));
+                student.setAge(resultSet.getInt(3));
+                student.setMobile(resultSet.getString(4));
+                student.setDob(resultSet.getDate(5));
+                student.setStream(resultSet.getString(6));
                 studentList.add(student);
             }
         } catch (SQLException e) {

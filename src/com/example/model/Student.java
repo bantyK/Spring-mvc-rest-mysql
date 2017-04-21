@@ -3,9 +3,6 @@ package com.example.model;
 
 import java.sql.Date;
 
-/**
- * Created by Banty on 18/04/17.
- */
 public class Student {
 
     private int id;
@@ -14,15 +11,6 @@ public class Student {
     private String mobile;
     private Date dob;
     private String stream;
-
-    public Student(int id, String name, int age, String mobile, Date dob, String stream) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-        this.mobile = mobile;
-        this.dob = dob;
-        this.stream = stream;
-    }
 
     public Student() {
     }

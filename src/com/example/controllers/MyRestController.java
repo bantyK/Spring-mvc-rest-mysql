@@ -46,10 +46,10 @@ public class MyRestController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/add/student", method = RequestMethod.POST)
-    public ModelAndView addStudent(@RequestBody Student student) {
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    public ModelAndView saveStudent(@ModelAttribute("student") Student student){
         ModelAndView modelAndView = new ModelAndView("index");
-        modelAndView.addObject("msg", student.getName());
         return modelAndView;
     }
+
 }

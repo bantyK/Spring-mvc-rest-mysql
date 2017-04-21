@@ -1,26 +1,45 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Vuclip
-  Date: 20/04/17
-  Time: 6:45 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="th" uri="http://www.springframework.org/tags/form" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Add New Student</title>
 </head>
 <body>
-    <form action="/add/student" method="post">
-
-        <p>ID :<input type="text" name="id"/></p>
-        <p>NAME :<input type="text" name="name"/></p>
-        <p>AGE :<input type="text" name="age"/></p>
-        <p>MOBILE :<input type="text" name="mobile"/></p>
-        <p>DOB :<input type="text" name="dob"/></p>
-        <p>STREAM :<input type="text" name="stream"/></p>
-
-        <p><input type="submit" value="SUBMIT"/></p>
+<div align="center">
+    <h1>New Student</h1>
+    <form action="/save" method="post">
+        <table>
+            <tr>
+                <td>Id:</td>
+                <td><input type="text" name="id"/></td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="name"/></td>
+            </tr>
+            <tr>
+                <td>Age:</td>
+                <td><input type="text" name="age"/></td>
+            </tr>
+            <tr>
+                <td>Mobile:</td>
+                <td><input type="text" name="mobile"/></td>
+            </tr>
+            <tr>
+                <td>DOB:</td>
+                <td><input type="text" name="dob"/></td>
+            </tr>
+            <tr>
+                <td>Stream:</td>
+                <td><input type="text" name="stream"/></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" value="Save"></td>
+            </tr>
+        </table>
     </form>
+</div>
 </body>
 </html>

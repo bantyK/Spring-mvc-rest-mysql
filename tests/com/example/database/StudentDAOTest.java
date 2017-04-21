@@ -21,16 +21,23 @@ public class StudentDAOTest {
     @Before
     public void setUp() throws Exception {
         Class.forName("com.mysql.jdbc.Driver").newInstance();
-        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/banty","root","password");
+        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/banty", "root", "password");
         studentDAO = new StudentDAO(connection);
-        student = new Student(101,"name",21,"12121112",new Date(1994,23,12),"stream");
+        student = new Student();
+        student.setId(101);
+        student.setName("name");
+        student.setAge(21);
+        student.setMobile("12121112");
+        student.setDob(new Date(1994, 23, 12));
+        student.setStream("stream");
+
     }
 
     @Test
     public void shouldBeAbleToAddNewStudent() throws Exception {
         int previousCount = studentDAO.getTotalNumberOfStudent();
         studentDAO.addStudent(student);
-        assertEquals(previousCount+1,studentDAO.getTotalNumberOfStudent());
+        assertEquals(previousCount + 1, studentDAO.getTotalNumberOfStudent());
 
         studentDAO.deleteStudent(student.getId()); // delete student after test result
     }
@@ -46,11 +53,11 @@ public class StudentDAOTest {
         Date dob = new Date(1890, 7, 23);
         newStudent.setDob(dob);
 
-        studentDAO.updateStudent(student.getId(),newStudent);
+        studentDAO.updateStudent(student.getId(), newStudent);
 
         newStudent = studentDAO.retrieveStudent(student.getId());
-        assertEquals("Enzo",newStudent.getName());
-        assertEquals(dob.toString(),newStudent.getDob().toString());
+        assertEquals("Enzo", newStudent.getName());
+        assertEquals(dob.toString(), newStudent.getDob().toString());
         studentDAO.deleteStudent(student.getId()); //clean up the database after test completes
 
     }

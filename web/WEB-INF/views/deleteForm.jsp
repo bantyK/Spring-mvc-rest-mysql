@@ -8,9 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>$Title$</title>
+    <title>Delete Student</title>
 </head>
 <body>
-$END$
+    <form action="/delete" method="post">
+        <h4>Enter the id which you want to delete</h4>
+        <input type="text" name="id"/>
+        <input type="submit" value="DELETE"/>
+    </form>
 </body>
 </html>

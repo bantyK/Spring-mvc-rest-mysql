@@ -68,4 +68,15 @@ public class MyRestController {
         getDaoObject().updateStudent(student.getId(),student);
         return new ModelAndView("redirect:/students");
     }
+
+    @RequestMapping (value = "/student/delete",method = RequestMethod.GET)
+    public ModelAndView deleteForm(){
+        ModelAndView modelAndView = new ModelAndView("deleteForm");
+        return modelAndView;
+    }
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public ModelAndView deleteStudent(@RequestParam("id") int id){
+        getDaoObject().deleteStudent(id);
+        return new ModelAndView("redirect:/students");
+    }
 }

@@ -30,7 +30,7 @@ public class MyRestController {
         return studentDAO;
     }
 
-    @RequestMapping(value = "/students", produces = "application/json")
+    @RequestMapping(value = "/students", method = RequestMethod.GET, produces = "application/json")
     public ArrayList<Student> getAllStudents() {
         return getDaoObject().getAllStudents();
     }
@@ -46,9 +46,12 @@ public class MyRestController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public void saveStudent(@ModelAttribute("student") Student student){
+    @RequestMapping(value = "/save", method = {RequestMethod.POST, RequestMethod.GET})
+    public ModelAndView saveStudent(@ModelAttribute("student") Student student){
         getDaoObject().addStudent(student);
+        return new ModelAndView("redirect:/students");
     }
+
+
 
 }

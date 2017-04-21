@@ -13,7 +13,7 @@
         <table>
             <tr>
                 <td>Id:</td>
-                <td><input type="text" name="id"/></td>
+                <td><input type="text" name="id" placeholder=${banty} /></td>
             </tr>
             <tr>
                 <td>Name:</td>

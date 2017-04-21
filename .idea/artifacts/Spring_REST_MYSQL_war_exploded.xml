@@ -18,6 +18,15 @@
           <element id="file-copy" path="$PROJECT_DIR$/../../../jackson jars/jackson-module-jaxb-annotations-2.8.8.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/../../../jackson jars/stax2-api-3.1.4.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/../../../jackson jars/woodstox-core-5.0.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../jars/jackson-annotations-2.8.8.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../jars/jackson-core-2.8.8.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../jars/jackson-databind-2.8.8.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../jars/jackson-dataformat-xml-2.8.8.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../jars/jackson-module-jaxb-annotations-2.8.8.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../jars/junit-4.12.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../jars/mockito-1.8.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../jars/stax2-api-3.1.4.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../jars/woodstox-core-5.0.3.jar" />
         </element>
       </element>
     </root>
